@@ -1,4 +1,5 @@
 Adding guard to app:
+  Guard keeps the testing running in the background
 
 Add these gems in development:
   gem 'guard'
