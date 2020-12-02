@@ -1,0 +1,10 @@
+Adding guard to app:
+
+Add these gems in development:
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+
+$ bundle install
+$ bundle binstubs guard
+$ guard init
