@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Articles', type: :request do
-  @article = Article.create(title: 'Title One', body: 'Body of article one')
+  before do
+    @article = Article.create(title: 'Title One', body: 'Body of article one')
+  end
 
   describe 'GET /articles/:id' do
     context 'with existing article' do
