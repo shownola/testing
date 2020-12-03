@@ -13,4 +13,6 @@ RSpec.feature 'Show an article' do
     expect(page).to have_content(@article.body)
     expect(current_path).to eq(article_path(@article))
   end
+
+  
 end
