@@ -1,6 +1,7 @@
 
-
-<%= link_to 'New Article', new_article_path, class: 'btn btn-primary btn-lg mb-3 mt-5', id: 'new-article-btn' %>
+<% if user_signed_in? %>
+  <%= link_to 'New Article', new_article_path, class: 'btn btn-primary btn-lg mb-3 mt-5', id: 'new-article-btn' %>
+<% end %>
 
 <% if @articles.empty? %>
   <h1 id="no-articles">No Articles Created</h1>
@@ -12,6 +13,9 @@
       </div>
       <div class="article-body mb-3">
         <%= truncate(article.body, length: 500) %>
+      </div>
+      <div class="author">
+        <small>Created by: <%= article.user.email %></small>
       </div>
     </div>
   <% end %>
