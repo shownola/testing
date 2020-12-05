@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.feature 'Show an article' do
   before do
-    @article = Article.create(title: 'First Article', body: 'Lorem Ipsum')
+    john = User.create(email: 'john@example.com', password: 'password')
+    login_as(john)
+    @article = Article.create(title: 'First Article', body: 'Lorem Ipsum', user: john)
   end
 
   scenario 'A user shows an article' do
@@ -14,5 +16,5 @@ RSpec.feature 'Show an article' do
     expect(current_path).to eq(article_path(@article))
   end
 
-  
+
 end
